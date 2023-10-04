@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Projekt</title>
+</head>
+<body>
+    <div>
+    <header>
+        <h1>A rendezési algoritmus</h1>
+        <h2><a href="random.html">Random számok generálása</a></h2>
+    </header>
+
+    <section>
+        <h3>A sorted() függvény és a list.sort() tagfüggvény</h3>
+        <p>
+            Valójában bennünket ez a kettő érdekel. A paraméterezésük erősen hasonló:
+            <ul>
+                <li>a rendezendő lista a sorted() függvénynél, a list.sort() esetében nyilván a list-et rendezzük, például sorted(autók) vagy autók.sort()</li>
+                <li>ha fordítva akarunk rendezni: reverse=True</li>
+                <li>a nem úgy akarunk rendezni, ahogy a józan ész diktálja: kulcsfüggvény</li>
+            </ul>
+            <p>A két sort-függvény lényegében ugyanaz, és mindkettő mocsok gyors, nagyon jó hírnek örvend a programozók világában. A kulcsfüggvény pedig az igazi menő dolog, de hát nézd csak meg a fenti videót! Megjegyzés: ide kapcsolódnának a lambdafüggvények, ha nem tudsz nyugton ülni az alfeleden, keress rá.</p>
+        </p>
+    </section>
+
+    <section>
+        <h3>Típusai</h3>
+        <p>A rendezési algoritmusoknak két fő típusa van: az összehasonlító (melyek az elemek összehasonlítása alapján állítják elő a rendezett kimenetet) és a nem összehasonlító (melyek az elemek összehasonlítása nélkül képesek erre) rendezések. Egy másik szempont a rendezés stabilitása, azaz hogy az azonosnak ítélt elemek közötti sorrendet megőrzi-e.</p>  
+    </section>
+
+    <section>
+        <h3>Példa:</h3><img src="erend_1_1k_w250.png" id="1" title="Rendezési algoritmus" alt="Rendezési algoritmus">
+        <p>szamok = [2, 4, -9, 0, -3, 7]</p>
+
+            <p>sorted() függvény</p>
+            <p>listaelemek eredeti sorrendje NEM változik!</p>
+            <p>rendezett = sorted(szamok)</p>
+            <p>print(f'{szamok=}')</p>
+            <p>print(f'{rendezett=}')</p>
+            
+            <p>reverse paraméter</p>
+            <p>csokkeno_sorrend = sorted(szamok, reverse=True)</p>
+            <p>print(f'{rendezett=}')</p>
+            
+            <p>sort() metódus</p>
+            <p>szamok.sort()</p>
+            <p>print(f'{szamok=}')</p>
+
+    </section>
+    <section>
+        <footer>
+            <h3>Linkek:</h3>
+            <p><a href="https://sulipy.hu/tovabbi_algoritmusok/rendezes?tab=peldak" target="_blank">https://sulipy.hu/tovabbi_algoritmusok/rendezes?tab=peldak</a></p>
+            <p><a href="https://pythonidomar.wordpress.com/2017/01/12/rendezes/" target="_blank">https://pythonidomar.wordpress.com/2017/01/12/rendezes/</a></p>
+            <p><a href="https://hu.wikipedia.org/wiki/Rendez%C3%A9s_(programoz%C3%A1s)" target="_blank">https://hu.wikipedia.org/wiki/Rendez%C3%A9s_(programoz%C3%A1s)</a></p>
+        </footer>
+    </section>
+    </div>
+</body>
+</html>

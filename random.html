@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Projekt</title>
+</head>
+<body>
+    <div>
+    <header>
+        <h1>Random számok generálása</h1>
+        <h2><a href="rendezes.html">Rendezési algoritmus</a></h2>
+    </header>
+
+    <section>
+        <h3>Ismertető</h3>
+        <p>A szám, amire a program “gondolni” fog, egy véletlen szám lesz. A véletlenszámokat a programozási nyelvek jó szokás szerint a saját véletlenszám-generátorukkal (véletlenszám-előállítójukkal) állítják elő. Minthogy egy számítógép természetesen nem tud igazán véletlen számot előállítani, ezért úgy is hívjuk az ilyen számokat, hogy pszeudo-véletlen (ál-véletlen) számok. Attól pszeudo-véletlen, hogy idővel ismétlődik a véletlenszámok sora. Az ismétlődés a Python 3 esetében 2**19937-1 elemenként következik (a két csillag a hatványozás, tudod). Ez egy viszonylag nagyobb szám, amit részint írass ki magadnak, de ha lusta volnál, ideírom:</p>
+    </section>
+
+    <section>
+        <h3>Modulok</h3>
+        <p>A Python véletlenszám-generátora, illetve a hozzá kapcsolódó utasítások egy külön modulban kapott helyet. A modult (minden modult, nem csak ezt) úgy képzeld el, hogy a program elején betöltjük, és utána a Pythonunk egy rakat újabb utasítást tud. Ezek az utasítások a modulban vannak meghatározva. A modul nem egyéb, mint egy Python-program, amit nem arra terveztek, hogy önmagában futtassuk, hanem arra, hogy más programok kölcsönvehessék az utasításaikat.</p>
+        <p>A használni kívánt modult a program elején szokás betölteni az import utasítással. Az alábbi programban a véletlenszám-előállítással kapcsolatos modult töltjük be és vesszük használatba(Lásd: Példa)</p>
+        <p>Az import random parancs kiadása után már használhatjuk a random modul utasításait (igen, több is van benne). Mindegyik utasítás neve a modul nevével, most ugye random-mal kezdődik, és maga az utasítás egy ponttal kapcsolódik a modul nevéhez. A modul egyik utasítása a randint, ami véletlenszerű egész számot ad vissza, esetünkben 1 és 6 közöttit. (A véletlenszám-generátorok alapesetben 0 és 1 közötti törtet adnak vissza, úgy, hogy a 0 benne lehet, az 1 nem. A randint elvégzi nekünk azt a melót, hogy ebből a számból a megadott határok közötti egészet csinál.)</p>
+    </section>
+
+    <section>
+        <h3>Konstansok használata</h3>
+        <p>Konstansoknak az olyan “változókat” hívjuk, amiknek az értéke nem változik. Na de ki a péknek kell ilyen változó? Hát nekünk. Alapvetően három dologra jók (meg még egy csomó másikra):</p>
+        <ol>
+            <li>Ha sok helyen szerepel egy bizonyos érték a programunkban, amit nem nagyon változtatunk, de mivan, ha mégis… Ilyenkor megesik, hogy a nyolcvanharmadik helyen elfelejtjük átírni. Sokkal egyszerűbb, ha a program elején megadunk egy konstanst, és mindenhol azt használjuk, és ha mégis változtatni kell, a konstanst írjuk át. Mi is ilyen céllal használtunk konstanst a videóban.</li>
+            <li>Vannak olyan esetek, amikor egy szám nem mond semmit, de egy konstans könnyebben olvashatóvá teszi a programot. Például el tudsz nevezni vele színeket. Mondjuk a kedvenc lilád színkódja az A512EF tizenhatos számrendszerű szám, és mennyivel klasszabb és olvashatóbb, ha azt írhatod a programod ablaknak kirajzolásakor, hogy Window.background(LILA) a Window.background(A512EF) helyett.</li>
+            <li>Ha könnyen akarod lefordíthatóvá mármint ezúttal más emberi nyelvre lefordíthatóvá tenni a programodat: Az elején megadod, hogy ÜDVÖZLÉS=’Szia!’ és később írhatod, hogy print(ÜDVÖZLÉS). A fordításkor pedig csak a program elején lévő konstansokat kell átültetni a másik nyelvre, mondjuk olaszra.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h3>Példák:</h3><img src="random-number-generator-python.png.png" title="Random számok" alt="Random számok" id="1">
+        <h4>Első</h4>
+        <p>import random</p>
+
+            <p>random_szam = random.randint(1, 10)</p>
+            <p>print(random_szam)</p>
+        <h4>Második</h4>
+            <p>ALSÓ_HATÁR = 1</p>
+            <p>FELSŐ_HATÁR = 5</p>
+             
+            <p>import random</p>
+             
+            <p>gondolt_szám = random.randint(ALSÓ_HATÁR, FELSŐ_HATÁR)</p>
+             
+            <p>kitalálta = False</p>
+            <p>elhasznált_lehetőségek = 0</p>
+             
+            <p>while not kitalálta and elhasznált_lehetőségek < 3:</p>
+            <p>tipp = input('Melyik számra gondoltam ' + str(ALSÓ_HATÁR) + ' és ' + str(FELSŐ_HATÁR) + ' között? ')</p>
+                <p>tipp = int(tipp)</p>
+                <p>elhasznált_lehetőségek += 1</p>
+                <p>if tipp == gondolt_szám:</p>
+                <p>kitalálta = True</p>
+                    <p>print('ügyes!')</p>
+             
+                    <p>print('Pápá!')</p>
+
+    </section>
+    <section>
+        <footer>
+            <h3>Linkek:</h3>
+            <p><a href="https://sulipy.hu/elagazasok/veletlenszamok?tab=peldak" target="_blank">https://sulipy.hu/elagazasok/veletlenszamok?tab=peldak</a></p>
+            <p><a href="https://pythonidomar.wordpress.com/2016/09/25/veletlenul-utoljara-gondolok-egy-szamra/" target="_blank">https://pythonidomar.wordpress.com/2016/09/25/veletlenul-utoljara-gondolok-egy-szamra/</a></p>
+        </footer>
+    </section>
+    </div>
+</body>
+</html>
